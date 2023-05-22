@@ -728,7 +728,52 @@ user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
 $
 
 ```
+### Bundle 5
+## Exercise 1
+```bash
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git switch main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
 
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git pull
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1.85 KiB | 135.00 KiB/s, done.
+From https://github.com/UmutesiMMA/The-gym-git-exercise-solutions
+   b6a7060..7c51788  main       -> origin/main
+Updating b6a7060..7c51788
+Fast-forward
+ README.md | 136 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 136 insertions(+)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git add index.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git commit -m "home to index"
+[main 55de024] home to index
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename home.html => index.html (100%)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git push origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 233 bytes | 233.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/UmutesiMMA/The-gym-git-exercise-solutions.git
+   7c51788..55de024  main -> main
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$
+```
 
 
 
