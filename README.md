@@ -591,8 +591,144 @@ $
 
 ## Exercise 2
 ```bash
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git checkout -b ft/footer
+Switched to a new branch 'ft/footer'
 
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git add service.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git commit -m "who to consult for the service"
+[ft/footer 658fd6e] who to consult for the service
+ 1 file changed, 19 insertions(+), 6 deletions(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git add about.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git commit -m "Email and telephone on about page"
+[ft/footer 5c8c86a] Email and telephone on about page
+ 1 file changed, 2 insertions(+)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git push origin ft/footer
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 805 bytes | 402.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'ft/footer' on GitHub by visiting:
+remote:      https://github.com/UmutesiMMA/The-gym-git-exercise-solutions/pull/new/f
+t/footer
+remote:
+To https://github.com/UmutesiMMA/The-gym-git-exercise-solutions.git
+ * [new branch]      ft/footer -> ft/footer
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/footer)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git checkout -b ft/squashing
+Switched to a new branch 'ft/squashing'
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git merge --squash ft/footer
+Updating b6a7060..5c8c86a
+Fast-forward
+Squash commit -- not updating HEAD
+ about.html   |  2 ++
+ service.html | 25 +++++++++++++++++++------
+ 2 files changed, 21 insertions(+), 6 deletions(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git log
+commit b6a7060010487e2381583e5f4298b0103bfff657 (HEAD -> ft/squashing, origin/main,
+git-copy/main, main)
+Merge: c4b8190 fe5888c
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Mon May 22 23:26:03 2023 +0300
+
+    Merge branch 'main' of https://github.com/UmutesiMMA/The-gym-git-exercise-soluti
+ons
+
+commit c4b819087dde7ae6aba4d62346f7bba4899433f5
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Mon May 22 23:22:12 2023 +0300
+
+    slogan on home page
+
+commit fe5888cb86c1897a9ebbb3432443e76eeb09a7fd
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Mon May 22 23:13:49 2023 +0300
+
+    b3 e2
+
+commit 7b6219d0c99f9e3d757974dd650c8b9af6b77ff7
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Mon May 22 22:31:16 2023 +0300
+
+    changes to home page
+
+commit 1bc787ef3caebd5d55ebab2c125753920b2d1634
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Sat May 20 00:58:03 2023 +0300
+
+    B2/E2
+
+commit 3c7d5510c081878f1cd856b2fd9c658983e9bc22
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 00:23:31 2023 +0300
+
+    changes on same line different branches
+
+commit de9b1d9903afb32e519bd524da372bff3fb0dd6a
+Merge: 1e2cd02 fac79a3
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 16:19:49 2023 +0300
+
+    Merge pull request #3 from UmutesiMMA/ft/bundle-2
+
+    Service page added
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git commit -m " merge squash"
+[ft/squashing 7820373]  merge squash
+ 2 files changed, 21 insertions(+), 6 deletions(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git commit --amend -m "footer changes squashing"
+[ft/squashing 09d2934] footer changes squashing
+ Date: Tue May 23 00:32:27 2023 +0300
+ 2 files changed, 21 insertions(+), 6 deletions(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$ git push origin ft/squashing
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 571 bytes | 285.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'ft/squashing' on GitHub by visiting:
+remote:      https://github.com/UmutesiMMA/The-gym-git-exercise-solutions/pull/new/f
+t/squashing
+remote:
+To https://github.com/UmutesiMMA/The-gym-git-exercise-solutions.git
+ * [new branch]      ft/squashing -> ft/squashing
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/squashing)
+$
 
 ```
+
+
 
 
