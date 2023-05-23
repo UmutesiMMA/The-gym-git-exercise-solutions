@@ -819,3 +819,132 @@ To https://github.com/UmutesiMMA/git-cafe-exercise.git
 user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (main)
 $
 ```
+### Bundle 6
+## Exercise 1
+```bash
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (main)
+$ git switch -c ft/menu-page
+Switched to a new branch 'ft/menu-page'
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ touch Menu.html
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ git add Menu.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ git commit -m "Menu update"
+[ft/menu-page 15d68da] Menu update
+ 1 file changed, 73 insertions(+)
+ create mode 100644 Menu.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ git push
+fatal: The current branch ft/menu-page has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ft/menu-page
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ git push --set-upstream origin ft/menu-page
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 562 bytes | 140.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'ft/menu-page' on GitHub by visiting:
+remote:      https://github.com/UmutesiMMA/git-cafe-exercise/pull/new/ft/menu-page
+remote:
+To https://github.com/UmutesiMMA/git-cafe-exercise.git
+ * [new branch]      ft/menu-page -> ft/menu-page
+branch 'ft/menu-page' set up to track 'origin/ft/menu-page'.
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+```
+
+## Exercise 2
+```bash
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (ft/menu-page)
+$ git checkout -b bug-fix
+Switched to a new branch 'bug-fix'
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git add index-4.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git push
+fatal: The current branch bug-fix has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin bug-fix
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git push --set-upstream origin bug-fix
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'bug-fix' on GitHub by visiting:
+remote:      https://github.com/UmutesiMMA/git-cafe-exercise/pull/new/bug-fix
+remote:
+To https://github.com/UmutesiMMA/git-cafe-exercise.git
+ * [new branch]      bug-fix -> bug-fix
+branch 'bug-fix' set up to track 'origin/bug-fix'.
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git commit -m "bug fix"
+[bug-fix b0b8783] bug fix
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git push origin bug-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 293 bytes | 146.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/UmutesiMMA/git-cafe-exercise.git
+   15d68da..b0b8783  bug-fix -> bug-fix
+
+```
+
+### Exercise3
+```bash
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (bug-fix)
+$ git switch -c hot-fix
+Switched to a new branch 'hot-fix'
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (hot-fix)
+$ git add index-4.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (hot-fix)
+$ git commit -m "Telphone update"
+[hot-fix c92abf6] Telphone update
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/git-cafe-exercise (hot-fix)
+$ git push origin hot-fix
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 296 bytes | 148.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'hot-fix' on GitHub by visiting:
+remote:      https://github.com/UmutesiMMA/git-cafe-exercise/pull/new/hot-fix
+remote:
+To https://github.com/UmutesiMMA/git-cafe-exercise.git
+ * [new branch]      hot-fix -> hot-fix
+
+
+
+```
