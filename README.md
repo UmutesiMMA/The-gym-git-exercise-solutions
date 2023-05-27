@@ -516,6 +516,270 @@ To https://github.com/UmutesiMMA/The-gym-git-exercise-solutions.git
    dff22e4..bf35848  ft/service-redesign -> ft/service-redesign
 ```
 ### Bundle3
+## Exercise 1
+```bash
+user@DESKTOP-TQVNUUS MINGW64 ~
+$ cd ~/Documents/TheGym/Project
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
+$ git switch ft/faq-page
+Switched to branch 'ft/faq-page'
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git log
+commit 6e65ae42442d49061859ff16f03ce4549be522b2 (HEAD -> ft/faq-page, origin/ft/faq-
+page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 11:06:53 2023 +0300
+
+    Frequently asked questions
+
+commit 97c390cfbb91cef566bb1c03ac6fbfc7d4e5412f (origin/ft/contact-page, ft/contact-
+page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:54:40 2023 +0300
+
+    list of managers in team
+
+commit 1a5d253bb2c895b5d5a2b4441e0078d128b800d7
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:26:32 2023 +0300
+
+    team page in ft/team-page branch
+
+commit 3c7d5510c081878f1cd856b2fd9c658983e9bc22
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 00:23:31 2023 +0300
+
+    changes on same line different branches
+
+commit de9b1d9903afb32e519bd524da372bff3fb0dd6a
+Merge: 1e2cd02 fac79a3
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 16:19:49 2023 +0300
+
+    Merge pull request #3 from UmutesiMMA/ft/bundle-2
+
+    Service page added
+
+commit 1e2cd025fc40e34fc0c73eaa1cad172f34701111
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 01:29:47 2023 +0300
+
+    B2/E1
+
+commit fac79a3659e3a5c6543c5fc65bd8b4fa134927d6 (origin/ft/bundle-2, ft/bundle-2)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Thu May 18 01:22:00 2023 +0300
+
+    Service page
+
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git revert 1a5d253bb2c895b5d5a2b4441e0078d128b800d7
+CONFLICT (modify/delete): team.html deleted in parent of 1a5d253 (team page in ft/te
+am-page branch) and modified in HEAD.  Version HEAD of team.html left in tree.
+error: could not revert 1a5d253... team page in ft/team-page branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --continue
+error: Committing is not possible because you have unmerged files.
+hint: Fix them up in the work tree, and then use 'git add/rm <file>'
+hint: as appropriate to mark resolution and make a commit.
+fatal: Exiting because of an unresolved conflict.
+U       team.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --skip
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git add .
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git commit -m "new changes"
+On branch ft/faq-page
+nothing to commit, working tree clean
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git push origin ft/faq-page
+Everything up-to-date
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git add team.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git commit -m "new team member"
+[ft/faq-page 7696850] new team member
+ 1 file changed, 1 insertion(+)
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git push origin ft/faq-page
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 106.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/UmutesiMMA/The-gym-git-exercise-solutions.git
+   6e65ae4..7696850  ft/faq-page -> ft/faq-page
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git log
+commit 76968504ae363a30e124c7659c20264131474689 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Tue May 23 20:51:58 2023 +0300
+
+    new team member
+
+commit 6e65ae42442d49061859ff16f03ce4549be522b2
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 11:06:53 2023 +0300
+
+    Frequently asked questions
+
+commit 97c390cfbb91cef566bb1c03ac6fbfc7d4e5412f (origin/ft/contact-page, ft/contact-page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:54:40 2023 +0300
+
+    list of managers in team
+
+commit 1a5d253bb2c895b5d5a2b4441e0078d128b800d7
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:26:32 2023 +0300
+
+    team page in ft/team-page branch
+
+commit 3c7d5510c081878f1cd856b2fd9c658983e9bc22
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 00:23:31 2023 +0300
+
+    changes on same line different branches
+
+commit de9b1d9903afb32e519bd524da372bff3fb0dd6a
+Merge: 1e2cd02 fac79a3
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 16:19:49 2023 +0300
+
+    Merge pull request #3 from UmutesiMMA/ft/bundle-2
+
+    Service page added
+
+commit 1e2cd025fc40e34fc0c73eaa1cad172f34701111
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 01:29:47 2023 +0300
+
+    B2/E1
+
+commit fac79a3659e3a5c6543c5fc65bd8b4fa134927d6 (origin/ft/bundle-2, ft/bundle-2)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git revert 1a5d253bb2c895b5d5a2b4441e0078d128b800d7
+CONFLICT (modify/delete): team.html deleted in parent of 1a5d253 (team page in ft/team-page b
+ranch) and modified in HEAD.  Version HEAD of team.html left in tree.
+error: could not revert 1a5d253... team page in ft/team-page branch
+hint: After resolving the conflicts, mark them with
+hint: "git add/rm <pathspec>", then run
+hint: "git revert --continue".
+hint: You can instead skip this commit with "git revert --skip".
+hint: To abort and get back to the state before "git revert",
+hint: run "git revert --abort".
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git add team.html
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --continue
+On branch ft/faq-page
+You are currently reverting commit 1a5d253.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --continue
+On branch ft/faq-page
+You are currently reverting commit 1a5d253.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --continue
+On branch ft/faq-page
+You are currently reverting commit 1a5d253.
+  (all conflicts fixed: run "git revert --continue")
+  (use "git revert --skip" to skip this patch)
+  (use "git revert --abort" to cancel the revert operation)
+
+nothing to commit, working tree clean
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page|REVERTING)
+$ git revert --skip
+
+user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
+$ git log
+commit 76968504ae363a30e124c7659c20264131474689 (HEAD -> ft/faq-page, origin/ft/faq-page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Tue May 23 20:51:58 2023 +0300
+
+    new team member
+
+commit 6e65ae42442d49061859ff16f03ce4549be522b2
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 11:06:53 2023 +0300
+
+    Frequently asked questions
+
+commit 97c390cfbb91cef566bb1c03ac6fbfc7d4e5412f (origin/ft/contact-page, ft/contact-page)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:54:40 2023 +0300
+
+    list of managers in team
+
+commit 1a5d253bb2c895b5d5a2b4441e0078d128b800d7
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 10:26:32 2023 +0300
+
+    team page in ft/team-page branch
+
+commit 3c7d5510c081878f1cd856b2fd9c658983e9bc22
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+Date:   Sat May 20 00:23:31 2023 +0300
+
+    changes on same line different branches
+
+commit de9b1d9903afb32e519bd524da372bff3fb0dd6a
+Merge: 1e2cd02 fac79a3
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 16:19:49 2023 +0300
+
+    Merge pull request #3 from UmutesiMMA/ft/bundle-2
+
+    Service page added
+
+commit 1e2cd025fc40e34fc0c73eaa1cad172f34701111
+Author: UmutesiMMA <133501822+UmutesiMMA@users.noreply.github.com>
+Date:   Thu May 18 01:29:47 2023 +0300
+
+    B2/E1
+
+commit fac79a3659e3a5c6543c5fc65bd8b4fa134927d6 (origin/ft/bundle-2, ft/bundle-2)
+Author: umutesimagnificat@gmail.com <umutesimagnificat@gmail.com>
+:
+```
+
 ## Exercise 2
 ```bash
 user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (ft/faq-page)
@@ -776,9 +1040,6 @@ $
 ```
 ## Exercise 2
 ```bash
-user@DESKTOP-TQVNUUS MINGW64 ~/Documents/TheGym/Project (main)
-$ cd -
-/c/Users/user
 
 user@DESKTOP-TQVNUUS MINGW64 ~
 $ cd ~/Documents/TheGym/
